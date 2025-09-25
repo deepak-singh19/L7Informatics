@@ -18,12 +18,16 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY app/ ./app/
 COPY seed_movielens.py ./
+COPY start.sh ./
 
 # Create data directory
 RUN mkdir -p data
+
+# Make start script executable
+RUN chmod +x start.sh
 
 # Expose port
 EXPOSE 8000
 
 # Default command to run the application
-CMD ["sh", "-c", "gunicorn app.main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:${PORT:-8000}"]
+CMD ["./start.sh"]
