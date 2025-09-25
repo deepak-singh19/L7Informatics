@@ -34,6 +34,7 @@ allowed_origins = [
     "http://127.0.0.1:8081",
     "https://localhost:3000",
     "https://localhost:8080",
+    "https://l7-informaticsdeepak1.vercel.app",
 ]
 
 # Add Railway and production URLs
