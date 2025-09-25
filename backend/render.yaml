@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: movie-explorer-backend
+    env: python
+    buildCommand: "pip install -r requirements-prod.txt"
+    startCommand: "gunicorn app.main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT"
+    healthCheckPath: "/health"
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: TMDB_API_KEY
+        sync: false
+      - key: PYTHON_VERSION
+        value: "3.11.0"
+
+  - type: pserv
+    name: movie-explorer-postgres
+    env: docker
+    dockerfilePath: ./Dockerfile.postgres
+    disk:
+      name: postgres-data
+      mountPath: /var/lib/postgresql/data
+      sizeGB: 10
+    envVars:
+      - key: POSTGRES_DB
+        value: movie_explorer
+      - key: POSTGRES_USER
+        value: movie_user
+      - key: POSTGRES_PASSWORD
+        generateValue: true

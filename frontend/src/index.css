@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Movie Explorer Design System - Cinematic Dark Theme
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark cinematic background */
+    --background: 220 13% 8%;
+    --foreground: 210 40% 98%;
+
+    /* Movie cards with subtle elevation */
+    --card: 220 13% 12%;
+    --card-foreground: 210 40% 98%;
+
+    /* Overlay elements */
+    --popover: 220 13% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Cinematic red brand color */
+    --primary: 0 84% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Subtle secondary elements */
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 210 40% 88%;
+
+    /* Muted elements for less emphasis */
+    --muted: 220 13% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Accent highlights */
+    --accent: 220 13% 20%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Error states */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders and inputs */
+    --border: 220 13% 22%;
+    --input: 220 13% 15%;
+    --ring: 0 84% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom movie platform tokens */
+    --hero-gradient: linear-gradient(
+      135deg, 
+      hsl(220 13% 8% / 0.8) 0%, 
+      hsl(0 84% 10% / 0.3) 50%,
+      hsl(220 13% 8% / 0.9) 100%
+    );
+    
+    --movie-card-shadow: 0 4px 25px -5px hsl(0 0% 0% / 0.4);
+    --movie-card-hover-shadow: 0 10px 40px -10px hsl(0 84% 60% / 0.3);
+    
+    --search-glow: 0 0 30px hsl(0 84% 60% / 0.2);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Genre colors */
+    --genre-action: 14 100% 57%;
+    --genre-comedy: 45 100% 55%;
+    --genre-drama: 260 100% 70%;
+    --genre-horror: 0 100% 40%;
+    --genre-romance: 340 100% 60%;
+    --genre-scifi: 200 100% 60%;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Hide scrollbars for movie rows */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+  }
+
+  /* Smooth animations */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
