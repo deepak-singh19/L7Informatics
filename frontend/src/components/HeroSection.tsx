@@ -19,7 +19,7 @@ export const HeroSection = ({ onMovieSelect, onActorSelect }: HeroSectionProps) 
             bg-gradient-to-r from-foreground via-primary to-foreground 
             bg-clip-text text-transparent
             animate-pulse">
-            CineExplorer
+            L7INFORMATIC
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Discover your next favorite movie, explore talented actors, 
